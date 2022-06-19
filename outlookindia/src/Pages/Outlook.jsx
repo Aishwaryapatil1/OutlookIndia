@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchData } from '../redux/action'
+import { fetchData } from '../hoc/action'
 // import { NavLink,Link } from 'react-router-dom'
 import "./styled.modules.css";
 

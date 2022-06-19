@@ -1,7 +1,7 @@
 export const authReducer = (state=iniState,{type,payload})=>{
     switch (type) {
         case LOGIN_SUCCESS:
-            saveData("token",payload)
+            SignUpSvae("token",payload)
             return{
                 ...state,
                 isAuth : true,

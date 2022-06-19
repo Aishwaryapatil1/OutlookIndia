@@ -9,8 +9,8 @@ function loadData (key){
     }
 }
 
-function saveData(key,data){
+function SignUpSvae(key,data){
     localStorage.setItem(key,JSON.stringify(data))
 }
 
-export {loadData,saveData}
+export {loadData,SignUpSvae}

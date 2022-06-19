@@ -5,7 +5,7 @@ import React from 'react'
 import Outlook from './Outlook'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchData } from '../redux/action'
+import { fetchData } from '../hoc/action'
 import { NavLink } from 'react-router-dom'
 import {
   Box,

@@ -1,8 +1,5 @@
-
-
-
 import React from 'react'
-import "../AllContent/styled.modules.css";
+import "../Pages/styled.modules.css";
 // import { ReactNode } from 'react';
 import {
   Box,

@@ -1,25 +1,26 @@
 
 import React from 'react'
-import Home from '../AllContent/Home'
-import Business from '../AllContent/Business'
-import Crypto_Corner from '../AllContent/Crypto_Corner'
-import Entertainment from '../AllContent/Entertainment'
-import Hindi from '../AllContent/Hindi'
-import Magzine from '../AllContent/Magzine'
-import Money from '../AllContent/Money'
-import Others from '../AllContent/Others'
-import Outlook from '../AllContent/Outlook'
-import Photo from '../AllContent/Photo'
-import Poshan from '../AllContent/Poshan'
-import Sports from '../AllContent/Sports'
-import Travel from "../AllContent/Travel"
-import Video from "../AllContent/Video"
-import FullNews from '../singlepage/FullNews'
-import Login from '../login/Login'
+import Home from '../Pages/Home'
+import Business from '../Pages/Business'
+import Crypto_Corner from '../Pages/Crypto_Corner'
+import Entertainment from '../Pages/Entertainment'
+import Hindi from '../Pages/Hindi'
+import Magzine from '../Pages/Magzine'
+import Money from '../Pages/Money'
+import Others from '../Pages/Others'
+import Outlook from '../Pages/Outlook'
+import Photo from '../Pages/Photo'
+import Poshan from '../Pages/Poshan'
+import Sports from '../Pages/Sports'
+import Travel from "../Pages/Travel"
+import Video from "../Pages/Video"
+import FullNews from '../FullNews/FullNews'
+import Login from '../Login/Login'
 import {Route, Routes} from 'react-router-dom'
 
 const AllRoutes = () => {
   return (
+   
  <Routes>
   <Route path="/" element={<Home/>}/>
   <Route path="/business" element={<Business/>}/>

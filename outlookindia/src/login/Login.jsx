@@ -7,9 +7,9 @@ const Login = () => {
 
   const [formData, setformData] = useState({})
   const [formData1, setformData1] = useState({})
-  const [passtype, setpasstype] = useState(false)
+  const [pwd, setpwd] = useState(false)
 
-  const handleChange = (e) => {
+  const handleSignin = (e) => {
     const inputName = e.target.name;
     setformData({ ...formData, [inputName]: e.target.value })
      
@@ -25,7 +25,7 @@ const Login = () => {
     }
   }
  
-  const handleChange1 = (e) => {
+  const handlesignup = (e) => {
     console.log(e.target.value)
     const inputName1 = e.target.name;
     setformData1({ ...formData1, [inputName1]: e.target.value })
@@ -36,9 +36,9 @@ const Login = () => {
     e.preventDefault()
     let data1 = JSON.parse(localStorage.getItem("login"))
     if(data1.email===formData1.email && data1.password===formData1.password1){
-      alert("Login Success")
+      alert("Login Success....")
     }else{
-      alert("Login Fail")
+      alert("Try again Later....!!!")
     }
   }
 
@@ -58,14 +58,14 @@ return (<>
           <div className={style.style2}>
             <form className={style.form} onSubmit={handleSubmit}>
               <p>FIRST NAME</p>
-              <input  required onChange={handleChange} name="first" type="text" className={style.style3} style={{ textTransform: "capitalize" }} />
+              <input  required onChange={handleSignin} name="first" type="text" className={style.style3} style={{ textTransform: "capitalize" }} />
               <p>LAST NAME</p>
-              <input  required onChange={handleChange} name="last" type="text" className={style.style3} style={{ textTransform: "capitalize" }} />
+              <input  required onChange={handleSignin} name="last" type="text" className={style.style3} style={{ textTransform: "capitalize" }} />
               <p>EMAIL</p>
-              <input  required onChange={handleChange} name="email" type="email" className={style.style3} />
+              <input  required onChange={handleSignin} name="email" type="email" className={style.style3} />
               <p>PASSWORD</p>
-              <input onChange={handleChange} name="password" type={!passtype ? 'password' : 'text'} className={style.style3} />
-              <i style={{ marginLeft: "-30px", cursor: "pointer" }} className="fa-solid fa-eye" onClick={() => { setpasstype(!passtype) }}></i>
+              <input onChange={handleSignin} name="password" type={!pwd ? 'password' : 'text'} className={style.style3} />
+              <i style={{ marginLeft: "-30px", cursor: "pointer" }} className="fa-solid fa-eye" onClick={() => { setpwd(!pwd) }}></i>
               <p></p>
               <input  required type="submit" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" value="Create" className={style.style4} />
             </form>
@@ -95,10 +95,10 @@ return (<>
           <div className={style.style2}>
             <form className={style.form} onSubmit={handleSubmit1}>
               <p>EMAIL</p>
-              <input  required onChange={handleChange1} name="email" type="email" className={style.style3} />
+              <input  required onChange={handlesignup} name="email" type="email" className={style.style3} />
               <p>PASSWORD</p>
-              <input  required onChange={handleChange1} name="password1" type={!passtype ? 'password' : 'text'} className={style.style3} />
-              <i style={{ marginLeft: "-30px", cursor: "pointer" }} className="fa-solid fa-eye" onClick={() => { setpasstype(!passtype) }}></i>
+              <input  required onChange={handlesignup} name="password1" type={!pwd ? 'password' : 'text'} className={style.style3} />
+              <i style={{ marginLeft: "-30px", cursor: "pointer" }} className="fa-solid fa-eye" onClick={() => { setpwd(!pwd) }}></i>
 
               <p></p>
               <input  onSubmit={handleSubmit1} type="submit" value="Sign In" className={style.style4} />

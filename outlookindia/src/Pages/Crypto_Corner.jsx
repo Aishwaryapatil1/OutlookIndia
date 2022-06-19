@@ -3,9 +3,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import "./styled.modules.css";
+
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchData } from '../redux/action'
+import { fetchData } from '../hoc/action'
 import {
   Box,
   Flex,
@@ -18,7 +19,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 
-const Sports = () => {
+const Crypto_Corner = () => {
   const articles=useSelector((store)=>store.magzineData.articles)
   const dispatch=useDispatch()
   useEffect(()=>{
@@ -28,32 +29,27 @@ const Sports = () => {
   },[articles?.length,dispatch])
   return (
     <>
-    <Heading>SPORTS</Heading><br />
+    <Heading>BUSINESS</Heading><br />
     <div className='mainbusiness'>
       <div className='firstbusiness'>
-        <img src="https://imgnew.outlookindia.com/uploadimage/library/16_9/16_9_1/IMAGE_1655285970.webp" alt="" />  <br />
-        <NavLink className={"navlink"} style={{fontSize:"35px", fontWeight:"light"}} to="/
-        ">UEFA Nations League: Netherlands Survive Wales Fightback For Dramatic Win - In Pics</NavLink><br />
+        <img src="https://imgnew.outlookindia.com/uploadimage/library/16_9/16_9_1/IMAGE_1655265522.webp" alt="" />
+        <NavLink className={"navlink"} style={{fontSize:"35px", fontWeight:"light"}} to="/fullnews">Cabinet Gives Nod For 5G Auctions; 72,097.8 MHz Spectrum To Be Put On Block By July-End</NavLink><br />
         
-        <p>After leading 2-1, the Netherlands conceded a 92nd-minute penalty with Gareth Bale converting from the spot, then Memphis Depay won it straight from the restart. A 3-2 scoreline at home helped Oranje lead Group A4 after the fourth round with 10 points....</p>
+        <p>A total of 72,097.85 MHz of spectrum with a validity period of 20 years will be put to auction to be held by the end of July, 2022</p>
         </div>
       <div className='secbusiness'>
-        <img src="https://imgnew.outlookindia.com/uploadimage/library/16_9/16_9_2/IMAGE_1655283881.webp" alt="" /><br />
-        <NavLink className={"navlink"} style={{fontSize:"26px", fontWeight:"light"}} to="/
-        ">Arsene Wenger's Comment On Africa Draws The Ire Of South Americans</NavLink><br />
-        <p>Arsene Wenger said that if French striker Kylian Mbappe 'had been born in Cameroon, he wouldn't have become the striker he is today.'</p><br /><hr />
-        <NavLink className={"navlink"} style={{fontSize:"26px", fontWeight:"light"}} to="/
-        ">SL Vs AUS, 1st ODI: Glenn Maxwell Guides Australia To Nervy Win Over Sri Lanka</NavLink>
-        <p>Chasing a revised target of 282 runs from 44 overs, Australia were 189/5 in 30 overs when Glenn Maxwell walked in. He hit 80 not out off 51.</p>
+<img src="https://imgnew.outlookindia.com/uploadimage/library/16_9/16_9_2/Bitcoin_1655228320.webp" alt="" />        
+<NavLink className={"navlink"} style={{fontSize:"26px", fontWeight:"light"}} to="/fullnews">Asian Stocks Mixed Ahead Of Fed Rate Hike Decision</NavLink><br />
+        <p>The Shanghai Composite Index gained 1.1% to 3,323.64 after the Chinese government reported factory output rebounded into positive territory in May as...</p><br /><hr />
+        <NavLink className={"navlink"} style={{fontSize:"26px", fontWeight:"light"}} to="/fullnews">Rupee Inches 5 Paise Higher To 77.99 Against US Dollar In Early Trade</NavLink>
+        <p>Forex traders said lacklustre domestic markets, elevated crude oil prices and persistent foreign capital outflows weighed on the local unit.</p>
       </div>
       <div className='thirdbusiness'>
-        <img src="https://imgnew.outlookindia.com/uploadimage/library/16_9/16_9_1/IMAGE_1655281588.webp" alt="" /><br />
-        <NavLink className={"navlink"} style={{fontSize:"26px", fontWeight:"light"}} to="/
-        ">UEFA Nations League: Belgium Cement Second Spot With Win Over Poland - In Pics</NavLink><br />
-        <p>Michy Batshuayi's header in the first half proved the difference between Belgium and Poland in their UEFA Nations League, Group A4 match. Belgium are second in...</p><br /><hr />
-        <NavLink className={"navlink"} style={{fontSize:"26px", fontWeight:"light"}} to="/
-        ">Darwin Nunez, Uruguayan Striker, Joins Liverpool From Benfica For USD 78 Million</NavLink>
-        <p>It is an immediate response by Liverpool to the signing of Erling Haaland by Premier League title rivals Manchester City.</p>
+        <img src="https://imgnew.outlookindia.com/uploadimage/library/16_9/16_9_1/IMAGE_1655209595.webp" alt="" /><br />
+        <NavLink className={"navlink"} style={{fontSize:"26px", fontWeight:"light"}} to="/fullnews">WTO Meet Likely To Be Extended For One Day</NavLink><br />
+        <p>Member countries of the organization have gathered here to finalize an agreement on disciplining subsidies to promote sustainable fishing, and a package in...</p><br /><hr />
+        <NavLink className={"navlink"} style={{fontSize:"26px", fontWeight:"light"}} to="/fullnews">One Cannot Tread The Path Of Trade On An Empty Stomach: Piyush Goyal At WTO Meet</NavLink>
+        <p>Goyal said that it is possible to find the solution as there are well-established and proven mechanisms available and documents are on the table which can be...</p>
       </div>
     </div>
     <hr />
@@ -77,7 +73,6 @@ const Sports = () => {
     </>
   )
 }
-
 
 function BlogPostWithImage({image,title,description,publishedAt,source}) {
   return (
@@ -117,7 +112,7 @@ function BlogPostWithImage({image,title,description,publishedAt,source}) {
             color={useColorModeValue('gray.700', 'white')}
             fontSize={'2xl'}
             fontFamily={'body'}>
-             <NavLink className={"active"} to={`/fullnews/${title}/${source}/${description}`}>{title}</NavLink>
+            <NavLink className={"active"} to={`/fullnews/${title}/${source}/${description}`}>{title}</NavLink>
           </Heading>
           <Text color={'gray.500'}>
            {description}
@@ -137,4 +132,5 @@ function BlogPostWithImage({image,title,description,publishedAt,source}) {
     </Center>
   );
 }
-export default Sports
+
+export default Crypto_Corner
